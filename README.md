@@ -29,13 +29,13 @@
     - [Stanley控制器](./controller/stanley.py)
     - [线性二次型调节控制器](./controller/lqr.py)
 
-3. [例子(examples)](./examples/README.md)：关于模型运动及其路径跟踪控制的例子
+3. [例子(examples)](./examples/README.md)：关于模型运动及其路径跟踪横向控制的例子
     - [质点模型运动](./examples/particle_motion.py)
-    - [质点模型位置式PID控制](./examples/particle_positional_pid_control.py)
-    - [质点模型增量式PID控制](./examples/particle_incremental_pid_control.py)
-    - [质点模型纯跟踪控制](./examples/particle_pure_pursuit_control.py)
-    - [质点模型Stanley控制](./examples/particle_stanley_control.py)
-    - [质点模型线性二次型调节控制](./examples/particle_lqr_control.py)
+    - [位置式PID控制](./examples/positional_pid_control.py)
+    - [增量式PID控制](./examples/incremental_pid_control.py)
+    - [纯跟踪控制](./examples/pure_pursuit_control.py)
+    - [Stanley控制](./examples/stanley_control.py)
+    - [线性二次型调节控制](./examples/lqr_control.py)
 
 ## 运行环境
 > Python 3.7
