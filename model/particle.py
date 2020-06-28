@@ -20,10 +20,11 @@ class MODEL:
         # 更新状态值
         dx = self.v * np.cos(self.theta)
         dy = self.v * np.sin(self.theta)
-        dtheta = self.v * np.tan(deltat)/self.l
+        dtheta = self.v * np.tan(deltat) / self.l
         self.x += dx * self.dt
         self.y += dy * self.dt
         self.theta += dtheta * self.dt
+        self.v += vt * self.dt
 
     def plot_duration(self, length, width):
         '''
