@@ -9,3 +9,4 @@
 3. [particle_incremental_pid_control.py](./particle_incremental_pid_control.py)：质点模型增量式PID控制
 4. [particle_pure_pursuit_control.py](./particle_pure_pursuit_control.py)：质点模型纯跟踪控制
 5. [particle_stanley_control.py](./particle_stanley_control.py)：质点模型Stanley控制
+6. [particle_lqr_control.py](./particle_lqr_control.py)：质点模型线性二次型调节控制
