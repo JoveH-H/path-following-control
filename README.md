@@ -26,12 +26,14 @@
     - [位置式PID控制器](./controller/positional_pid.py)
     - [增量式PID控制器](./controller/incremental_pid.py)
     - [纯跟踪控制器](./controller/pure_pursuit.py)
+    - [Stanley控制器](./controller/stanley.py)
 
 3. [例子(examples)](./examples/README.md)：关于模型运动及其路径跟踪控制的例子
     - [质点模型运动](./examples/particle_motion.py)
     - [质点模型位置式PID控制](./examples/particle_positional_pid_control.py)
     - [质点模型增量式PID控制](./examples/particle_incremental_pid_control.py)
     - [质点模型纯跟踪控制](./examples/particle_pure_pursuit_control.py)
+    - [质点模型Stanley控制](./examples/particle_stanley_control.py)
 
 ## 运行环境
 > Python 3.7
