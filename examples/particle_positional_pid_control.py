@@ -35,7 +35,7 @@ if __name__ == "__main__":
     robot = particle.MODEL(X, Y, THETA,  V, L, DT)
 
     # 配置位置式PID控制器参数
-    pid = positional_pid.CU(1, 0.01, 20)
+    pid = positional_pid.CU(0.8, 0.005, 5)
 
     refer_tree = KDTree(refer_path)
     robot_state = np.zeros(2)
@@ -54,7 +54,12 @@ if __name__ == "__main__":
         pid.update_e(e)
 
         # 输出PID，更新机器状态
-        robot.update(0, pid.get_u())
+        update = pid.get_u() - robot.theta
+        if update > np.pi / 3:
+            update = np.pi / 3
+        elif update < -np.pi / 3:
+            update = -np.pi / 3
+        robot.update(0, update)
 
         # 显示实际路况
         robot.plot_dynamic_path(3, 1)
