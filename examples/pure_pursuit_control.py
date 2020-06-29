@@ -5,7 +5,6 @@ sys.path.append(os.path.join(
 from model import particle
 from controller import pure_pursuit
 
-from scipy.spatial import KDTree
 import matplotlib.pyplot as plt
 import numpy as np
 import math
@@ -40,19 +39,23 @@ if __name__ == "__main__":
     Ld = 0.5
     controller = pure_pursuit.CU(Ld)
 
-    refer_tree = KDTree(refer_path)
+    # 初始化设备当前位置量和预瞄点编号
     robot_state = np.zeros(2)
     ind = 0
 
     for _ in range(COUNT):
-        # 获取前轮期望转角
+        # 获取当前位置
         robot_state[0], robot_state[1] = robot.x, robot.y
+
+        # 搜索预瞄点
         for i in range(ind, len(refer_path)):
             dist = np.linalg.norm(robot_state-refer_path[i])
             if dist >= Ld:
                 ind = i
                 break
         dist = np.linalg.norm(robot_state-refer_path[ind])
+
+        # 获取期望角度
         dx, dy = refer_path[ind] - robot_state
         alpha = math.atan2(dy, dx)
 

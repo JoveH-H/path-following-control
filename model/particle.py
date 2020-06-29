@@ -4,11 +4,21 @@ import matplotlib.pyplot as plt
 
 class MODEL:
     '''
-    质点模型的二维坐标，偏转角，速度，车轮间距，间隔时间
+    质点模型
+    X坐标，Y坐标，偏转角，速度，车轮间距，间隔时间
     '''
 
     def __init__(self, x, y, theta, v, l, dt):
-        # X坐标，Y坐标，偏转角，速度，车轮间距，间隔时间
+        '''
+        质点模型初始化
+        参数:
+            x: X坐标
+            y: Y坐标
+            theta: 偏转角
+            v: 速度
+            l: 车轮间距
+            dt: 间隔时间
+        '''
         self.x = x
         self.y = y
         self.theta = theta
@@ -17,7 +27,13 @@ class MODEL:
         self.dt = dt
 
     def update(self, vt, deltat):
-        # 更新状态值
+        '''
+        更新状态值
+        参数:
+            vt: 速度差
+            deltat: 偏转角差
+        '''
+        # 
         dx = self.v * np.cos(self.theta)
         dy = self.v * np.sin(self.theta)
         dtheta = self.v * np.tan(deltat) / self.l
@@ -29,6 +45,9 @@ class MODEL:
     def plot_duration(self, length, width):
         '''
         持续显示
+        参数:
+            length: 画面长度
+            width: 画面宽度
         '''
         plt.scatter(self.x, self.y, color='g')
         plt.axis([0, length, -width / 2, width/2])
@@ -36,6 +55,9 @@ class MODEL:
     def plot_dynamic_duration(self, length, width):
         '''
         机器动态持续显示
+        参数:
+            length: 画面长度
+            width: 画面宽度
         '''
         plt.scatter(self.x, self.y, color='g')
         plt.axis([self.x - length / 2, self.x + length / 2,
@@ -44,6 +66,9 @@ class MODEL:
     def plot_dynamic_path(self, length, width):
         '''
         静止路径动态显示
+        参数:
+            length: 画面长度
+            width: 画面宽度
         '''
         plt.scatter(self.x, self.y, color='g')
         plt.axis([self.x - length * 2 / 3, self.x +

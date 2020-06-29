@@ -42,22 +42,12 @@ if __name__ == "__main__":
     Q[3, 3] = 0.1  # 航向误差率权重
     R = 0.1  # 输入量权重
 
-    # 配置线性二次型调节控制器（这里并非完全准确的LQR）
+    # 配置线性二次型调节控制器
     controller = lqr.CU(Q, R)
 
     for _ in range(COUNT - 1):
-        # 求解车身中心最近的路径点及其差距
-        ind, e = controller.calc_nearest_index(robot, refer_path[:, 0], refer_path[:, 1])
-
-        dx, dy = refer_path[ind+1] - refer_path[ind]
-        pd = dy / dx
-
-        ddx, _ = (0.5 * (refer_path[ind+1] - refer_path[ind-1])) ** 2
-        _, ddy = refer_path[ind+1] - 2 * refer_path[ind] + refer_path[ind-1]
-        pdd = ddy / ddx
-
         # 获取前轮转角
-        delta = controller.get_deltat(robot, e, pd, pdd)
+        delta = controller.get_deltat(robot, refer_path)
 
         # 更新机器状态
         robot.update(0, delta)
