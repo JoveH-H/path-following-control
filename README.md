@@ -6,7 +6,9 @@
 /_/                                                   /___/                                    
 ```
 # path-following-control
-[![License](https://img.shields.io/badge/license-Apache%202-blue)](./LICENSE)
+[![Build Status](https://travis-ci.org/JoveH-H/path-following-control.svg?branch=master)](https://travis-ci.org/JoveH-H/path-following-control)
+[![License](https://img.shields.io/badge/license-Apache%202-blue.svg)](./LICENSE)
+[![Release](https://img.shields.io/badge/release-v1.0.0-brightgreen.svg)](https://github.com/JoveH-H/path-following-control/releases/tag/v1.0.0)
 [![Author](https://img.shields.io/badge/author-Jove-orange.svg)](https://github.com/JoveH-H)
 
 这是一个关于路径跟踪控制实现的项目。
@@ -15,7 +17,7 @@
 
 | 版本 | 描述 |
 | --- | --- |
-| `-` | `-` |
+| `v1.0.0` | `初步的模型运动及其路径跟踪的横向控制` |
 
 ## 功能模块
 
@@ -40,7 +42,7 @@
 ## 运行环境
 > Python 3.7
 
-> sys + math + numpy + scipy + matplotlib + copy
+> 相关依赖及其指定版本请参考 [requirements.txt](./requirements.txt)
 
 ## 使用说明
 直接执行对应的例子文件即可。
