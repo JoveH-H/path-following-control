@@ -16,7 +16,7 @@ if __name__ == "__main__":
     plt.figure(figsize=(10, 3))
 
     # 设置参考轨迹
-    PATH_LENGTH, COUNT = 1, 150
+    PATH_LENGTH, COUNT = 1, 100
     refer_path = np.zeros((COUNT, 2))
     refer_path[:, 0] = np.linspace(0, PATH_LENGTH, COUNT)
 

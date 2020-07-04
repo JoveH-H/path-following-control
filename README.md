@@ -6,6 +6,7 @@
 /_/                                                   /___/                                    
 ```
 # path-following-control
+![Python CI](https://github.com/JoveH-H/path-following-control/workflows/Python%20CI/badge.svg)
 [![License](https://img.shields.io/badge/license-Apache%202-blue.svg)](./LICENSE)
 [![Release](https://img.shields.io/badge/release-v1.0.0-brightgreen.svg)](https://github.com/JoveH-H/path-following-control/releases/tag/v1.0.0)
 [![Author](https://img.shields.io/badge/author-Jove-orange.svg)](https://github.com/JoveH-H)
