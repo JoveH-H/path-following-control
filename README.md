@@ -6,7 +6,6 @@
 /_/                                                   /___/                                    
 ```
 # path-following-control
-[![Build Status](https://travis-ci.org/JoveH-H/path-following-control.svg?branch=master)](https://travis-ci.org/JoveH-H/path-following-control)
 [![License](https://img.shields.io/badge/license-Apache%202-blue.svg)](./LICENSE)
 [![Release](https://img.shields.io/badge/release-v1.0.0-brightgreen.svg)](https://github.com/JoveH-H/path-following-control/releases/tag/v1.0.0)
 [![Author](https://img.shields.io/badge/author-Jove-orange.svg)](https://github.com/JoveH-H)

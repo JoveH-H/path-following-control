@@ -1,7 +1,0 @@
-language: python
-python:
-  - "3.7"
-install:
-  - pip install -r requirements.txt
-script:
-  - python3 examples/particle_motion.py examples/positional_pid_control.py examples/incremental_pid_control.py examples/pure_pursuit_control.py examples/stanley_control.py examples/lqr_control.py
