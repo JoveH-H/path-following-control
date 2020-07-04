@@ -33,7 +33,6 @@ class MODEL:
             vt: 速度差
             deltat: 偏转角差
         '''
-        # 
         dx = self.v * np.cos(self.theta)
         dy = self.v * np.sin(self.theta)
         dtheta = self.v * np.tan(deltat) / self.l

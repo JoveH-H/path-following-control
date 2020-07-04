@@ -15,13 +15,13 @@ class CU:
             Q: 偏差权重矩阵
             R: 输入量权重矩阵
         '''
-        self.x = np.mat(np.zeros((4, 1))) # 状态变量矩阵
+        self.x = np.mat(np.zeros((4, 1)))  # 状态变量矩阵
         self.A = np.mat(np.zeros((4, 4)))
         self.B = np.mat(np.zeros((4, 1)))
         self.Q = Q
         self.R = R
-        self.pe = 0 # 旧被控模型中心离路径的最近点的差距
-        self.pth_e = 0 # 旧路径上离被控模型最近点的切线角和被控设备横摆角的偏差值
+        self.pe = 0  # 旧被控模型中心离路径的最近点的差距
+        self.pth_e = 0  # 旧路径上离被控模型最近点的切线角和被控设备横摆角的偏差值
 
     def solve_DARE(self, A, B, Q, R):
         '''

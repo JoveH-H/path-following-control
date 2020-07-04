@@ -69,7 +69,7 @@ if __name__ == "__main__":
         ctheta = math.atan2(ndy, ndx)
 
         # 更新前轮转角
-        delta = controller.get_deltat(robot, e , ctheta)
+        delta = controller.get_deltat(robot, e, ctheta)
 
         # 更新机器状态
         robot.update(0, delta)

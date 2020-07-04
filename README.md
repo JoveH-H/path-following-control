@@ -40,12 +40,17 @@
     - [线性二次型调节控制](./examples/lqr_control.py)
 
 ## 运行环境
-> Python 3.7
+> Python 3.x
 
 > 相关依赖及其指定版本请参考 [requirements.txt](./requirements.txt)
 
 ## 使用说明
-直接执行对应的例子文件即可。
+1. 安装Python依赖
+```shell
+$ pip3 install -r requirements.txt
+```
+
+2. 执行对应的例子文件即可。
 ```shell
 $ python3 examples/particle_motion.py
 ```
