@@ -22,27 +22,41 @@ class CU:
         self.ei = 0.0
         self.ed = 0.0
 
-    def update_e(self, e):
+    def limit(self, out, limit=np.pi/5):
+        '''
+        输出限幅
+        参数:
+            out: 输出
+            limit: 积分量限幅
+        '''
+        if out > limit:
+            out = limit
+        elif out < -limit:
+            out = -limit
+        return out
+
+    def update_e(self, e, ei_limit=np.pi/6):
         '''
         更新偏差
         参数:
             e: 测量值与给定值之间的差
+            ei_limit: 积分量限幅
         '''
-        self.ed = e - self.ep
-        self.ei += e
-        self.ep = copy.deepcopy(e)
+        now_e = copy.deepcopy(e)
+        self.ed = now_e - self.ep
+        self.ei += now_e
+        self.ei = self.limit(self.ei, ei_limit)
+        self.ep = now_e
 
-    def get_u(self):
+    def get_u(self, u_limit=np.pi/5):
         '''
         更新给定值
         返回:
             u: 给定值
+            u_limit: 给定值限幅
         '''
         u = self.kp * self.ep + self.ki * self.ei + self.kd * self.ed
-        if u > np.pi / 5:
-            u = np.pi / 5
-        elif u < -np.pi / 5:
-            u = -np.pi / 5
+        u = self.limit(u, u_limit)
         return u
 
 

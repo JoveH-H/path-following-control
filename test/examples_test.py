@@ -7,11 +7,11 @@ def test_case1():
 
 
 def test_case2():
-    os.system("python ./examples/positional_pid_control.py")
+    os.system("python ./examples/position_pid_control.py")
 
 
 def test_case3():
-    os.system("python ./examples/incremental_pid_control.py")
+    os.system("python ./examples/increase_pid_control.py")
 
 
 def test_case4():

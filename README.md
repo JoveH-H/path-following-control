@@ -25,16 +25,16 @@
     - [质点模型](./model/particle.py)
 
 2. [控制器(controller)](./controller/README.md)：常见的控制器
-    - [位置式PID控制器](./controller/positional_pid.py)
-    - [增量式PID控制器](./controller/incremental_pid.py)
+    - [位置式PID控制器](./controller/position_pid.py)
+    - [增量式PID控制器](./controller/increase_pid.py)
     - [纯跟踪控制器](./controller/pure_pursuit.py)
     - [Stanley控制器](./controller/stanley.py)
     - [线性二次型调节控制器](./controller/lqr.py)
 
 3. [例子(examples)](./examples/README.md)：关于模型运动及其路径跟踪横向控制的例子
     - [质点模型运动](./examples/particle_motion.py)
-    - [位置式PID控制](./examples/positional_pid_control.py)
-    - [增量式PID控制](./examples/incremental_pid_control.py)
+    - [位置式PID控制](./examples/position_pid_control.py)
+    - [增量式PID控制](./examples/increase_pid_control.py)
     - [纯跟踪控制](./examples/pure_pursuit_control.py)
     - [Stanley控制](./examples/stanley_control.py)
     - [线性二次型调节控制](./examples/lqr_control.py)

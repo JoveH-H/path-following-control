@@ -3,7 +3,7 @@ import sys
 sys.path.append(os.path.join(
     os.path.dirname(__file__), os.path.pardir).replace('\\', '/'))
 from model import particle
-from controller import positional_pid
+from controller import position_pid
 
 from scipy.spatial import KDTree
 import math
@@ -38,12 +38,12 @@ if __name__ == "__main__":
     robot = particle.MODEL(X, Y, THETA,  V, L, DT)
 
     # 配置位置式PID控制器参数
-    pid = positional_pid.CU(0.8, 0.01, 20)
+    pid = position_pid.CU(0.3, 0.02, 2)
 
     # 初始化设备当前位置量
     robot_state = np.zeros(2)
 
-    for _ in range(COUNT):
+    for i in range(COUNT):
         # 获取当前位置
         robot_state[0], robot_state[1] = robot.x, robot.y
         _, ind = refer_tree.query(robot_state)
@@ -65,7 +65,8 @@ if __name__ == "__main__":
         pid.update_e(e)
 
         # 输出PID，更新机器状态
-        update = pid.get_u() - robot.theta
+        new_goal_theta = pid.get_u()
+        update = new_goal_theta - robot.theta
         if update > np.pi / 5:
             update = np.pi / 5
         elif update < -np.pi / 5:

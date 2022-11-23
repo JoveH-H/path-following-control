@@ -3,7 +3,7 @@ import sys
 sys.path.append(os.path.join(
     os.path.dirname(__file__), os.path.pardir).replace('\\', '/'))
 from model import particle
-from controller import incremental_pid
+from controller import increase_pid
 
 from scipy.spatial import KDTree
 import math
@@ -38,7 +38,7 @@ if __name__ == "__main__":
     robot = particle.MODEL(X, Y, THETA,  V, L, DT)
 
     # 配置增量式PID控制器参数
-    pid = incremental_pid.CU(0.8, 0.05, 20)
+    pid = increase_pid.CU(1, 0.2, 0.1)
 
     # 初始化设备当前位置量
     robot_state = np.zeros(2)
@@ -65,7 +65,8 @@ if __name__ == "__main__":
         pid.update_e(e)
 
         # 输出PID，更新机器状态
-        robot.update(0, pid.get_ut())
+        now_ut = pid.get_ut()
+        robot.update(0, now_ut)
 
         # 显示实际路况
         robot.plot_dynamic_path(3, 1)
